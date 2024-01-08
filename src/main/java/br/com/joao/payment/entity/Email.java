@@ -21,15 +21,10 @@ public class Email {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
     private String ownerRef;
-    @Column(nullable = false)
     private String emailFrom;
-    @Column(nullable = false)
     private String emailTo;
-    @Column(nullable = false)
     private String subject;
-    @Column(nullable = false)
     private String text;
     private LocalDateTime sendDateEmail;
     private StatusEmail statusEmail;
