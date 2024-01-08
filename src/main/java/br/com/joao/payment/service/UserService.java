@@ -3,6 +3,7 @@ package br.com.joao.payment.service;
 import br.com.joao.payment.entity.Email;
 import br.com.joao.payment.entity.User;
 import br.com.joao.payment.repository.UserRepository;
+import br.com.joao.payment.util.EmailTemplate;
 import br.com.joao.payment.util.GenerateVerificationCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -39,7 +40,10 @@ public class UserService {
         email.setEmailFrom("jneadgamer@gmail.com");
         email.setEmailTo(user.getEmail());
         email.setSubject("Falta pouco! ative sua conta");
-        email.setText("Link para ativar sua conta: http://localhost:8080/users/" + user.getId() + "/" + verificationCode);
+
+        String link = "http://localhost:8080/users/" + user.getId() + "?verify=" + user.getVerificationCode();
+
+        email.setText(EmailTemplate.generateEmail(user.getName(), link));
 
         emailService.sendEmail(email);
 

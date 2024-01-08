@@ -16,9 +16,9 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/{id}/{verificationCode}")
-    public ResponseEntity<String> active(@PathVariable String id, @PathVariable String verificationCode) {
-        if (userService.activeUser(id, verificationCode)) return ResponseEntity.ok("User activated!");
+    @GetMapping(value = "/{id}", params = "verify")
+    public ResponseEntity<String> active(@PathVariable String id, @RequestParam String verify) {
+        if (userService.activeUser(id, verify)) return ResponseEntity.ok("User activated!");
         return ResponseEntity.badRequest().body("Wrong code or user already activated!");
     }
 

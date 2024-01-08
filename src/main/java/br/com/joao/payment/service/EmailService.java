@@ -1,42 +1,41 @@
 package br.com.joao.payment.service;
 
-import br.com.joao.payment.dto.EmailDTO;
 import br.com.joao.payment.entity.Email;
 import br.com.joao.payment.enums.StatusEmail;
-import br.com.joao.payment.repository.EmailRepository;
-import org.springframework.mail.MailException;
-import org.springframework.mail.SimpleMailMessage;
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
+import java.io.UnsupportedEncodingException;
 import java.time.LocalDateTime;
 
 @Service
 public class EmailService {
 
-    private final EmailRepository emailRepository;
     private final JavaMailSender mailSender;
 
-    public EmailService(EmailRepository emailRepository, JavaMailSender mailSender) {
-        this.emailRepository = emailRepository;
+    public EmailService(JavaMailSender mailSender) {
         this.mailSender = mailSender;
     }
 
-    public Email sendEmail(Email email) {
+    public void sendEmail(Email email) {
         email.setSendDateEmail(LocalDateTime.now());
         try {
-            SimpleMailMessage message = new SimpleMailMessage();
-            message.setFrom(email.getEmailFrom());
-            message.setTo(email.getEmailTo());
-            message.setSubject(email.getSubject());
-            message.setText(email.getText());
+            MimeMessage message = mailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message, true) ;
+            helper.setFrom(email.getEmailFrom(), "João");
+            helper.setTo(email.getEmailTo());
+            helper.setSubject(email.getSubject());
+            helper.setText(email.getText(), true);
             mailSender.send(message);
 
             email.setStatusEmail(StatusEmail.SENT);
-        } catch (MailException e) {
+        } catch (MessagingException e) {
             email.setStatusEmail(StatusEmail.ERROR);
-        } finally {
-            return emailRepository.save(email);
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
         }
     }
 
