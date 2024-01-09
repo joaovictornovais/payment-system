@@ -4,7 +4,7 @@ import java.security.SecureRandom;
 
 public class GenerateVerificationCode {
 
-    public static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    public static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
     public static String generate(int lenght) {
         StringBuilder sb = new StringBuilder();

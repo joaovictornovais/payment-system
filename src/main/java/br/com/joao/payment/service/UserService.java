@@ -29,7 +29,7 @@ public class UserService {
         String enctryptedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(enctryptedPassword);
 
-        String verificationCode = GenerateVerificationCode.generate(6);
+        String verificationCode = GenerateVerificationCode.generate(64);
         user.setVerificationCode(verificationCode);
 
         userRepository.save(user);
