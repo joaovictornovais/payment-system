@@ -1,13 +1,21 @@
 package br.com.joao.payment.entity;
 
-import br.com.joao.payment.dto.EmailDTO;
-import br.com.joao.payment.enums.StatusEmail;
-import jakarta.persistence.*;
-import lombok.*;
+import java.time.LocalDateTime;
+
 import org.springframework.beans.BeanUtils;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import br.com.joao.payment.dto.EmailDTO;
+import br.com.joao.payment.enums.StatusEmail;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "tb_email")

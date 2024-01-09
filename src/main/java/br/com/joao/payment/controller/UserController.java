@@ -1,10 +1,13 @@
 package br.com.joao.payment.controller;
 
-import br.com.joao.payment.dto.UserDTO;
-import br.com.joao.payment.entity.User;
-import br.com.joao.payment.service.UserService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.joao.payment.service.UserService;
 
 @RestController
 @RequestMapping("/users")
