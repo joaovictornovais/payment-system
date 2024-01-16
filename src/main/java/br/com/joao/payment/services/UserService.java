@@ -1,14 +1,14 @@
-package br.com.joao.payment.service;
+package br.com.joao.payment.services;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import br.com.joao.payment.entity.Email;
-import br.com.joao.payment.entity.User;
-import br.com.joao.payment.repository.UserRepository;
-import br.com.joao.payment.util.EmailTemplate;
-import br.com.joao.payment.util.GenerateVerificationCode;
+import br.com.joao.payment.domain.email.Email;
+import br.com.joao.payment.domain.user.User;
+import br.com.joao.payment.repositories.UserRepository;
+import br.com.joao.payment.utils.EmailTemplate;
+import br.com.joao.payment.utils.GenerateVerificationCode;
 
 @Service
 public class UserService {

@@ -1,4 +1,4 @@
-package br.com.joao.payment.controller;
+package br.com.joao.payment.controllers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.joao.payment.service.UserService;
+import br.com.joao.payment.services.UserService;
 
 @RestController
 @RequestMapping("/users")

@@ -1,11 +1,11 @@
-package br.com.joao.payment.service;
+package br.com.joao.payment.services;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import br.com.joao.payment.repository.UserRepository;
+import br.com.joao.payment.repositories.UserRepository;
 
 @Service
 public class AuthorizationService implements UserDetailsService {

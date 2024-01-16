@@ -1,4 +1,4 @@
-package br.com.joao.payment.entity;
+package br.com.joao.payment.domain.user;
 
 import java.util.Collection;
 import java.util.List;
@@ -8,8 +8,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import br.com.joao.payment.dto.RegisterDTO;
-import br.com.joao.payment.enums.UserRole;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

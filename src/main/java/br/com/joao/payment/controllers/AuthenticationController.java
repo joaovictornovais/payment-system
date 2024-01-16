@@ -1,4 +1,4 @@
-package br.com.joao.payment.controller;
+package br.com.joao.payment.controllers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.joao.payment.dto.AuthenticationDTO;
-import br.com.joao.payment.dto.LoginResponseDTO;
-import br.com.joao.payment.dto.RegisterDTO;
-import br.com.joao.payment.entity.User;
-import br.com.joao.payment.repository.UserRepository;
-import br.com.joao.payment.service.TokenService;
-import br.com.joao.payment.service.UserService;
+import br.com.joao.payment.domain.user.AuthenticationDTO;
+import br.com.joao.payment.domain.user.LoginResponseDTO;
+import br.com.joao.payment.domain.user.RegisterDTO;
+import br.com.joao.payment.domain.user.User;
+import br.com.joao.payment.repositories.UserRepository;
+import br.com.joao.payment.services.TokenService;
+import br.com.joao.payment.services.UserService;
 
 @RestController
 @RequestMapping("/auth")

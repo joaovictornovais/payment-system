@@ -1,4 +1,4 @@
-package br.com.joao.payment.enums;
+package br.com.joao.payment.domain.email;
 
 public enum StatusEmail {
 

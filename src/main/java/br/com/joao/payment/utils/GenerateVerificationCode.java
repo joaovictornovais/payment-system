@@ -1,4 +1,4 @@
-package br.com.joao.payment.util;
+package br.com.joao.payment.utils;
 
 import java.security.SecureRandom;
 

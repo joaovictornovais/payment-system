@@ -1,11 +1,9 @@
-package br.com.joao.payment.entity;
+package br.com.joao.payment.domain.email;
 
 import java.time.LocalDateTime;
 
 import org.springframework.beans.BeanUtils;
 
-import br.com.joao.payment.dto.EmailDTO;
-import br.com.joao.payment.enums.StatusEmail;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

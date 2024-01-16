@@ -1,4 +1,4 @@
-package br.com.joao.payment.config;
+package br.com.joao.payment.infra.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

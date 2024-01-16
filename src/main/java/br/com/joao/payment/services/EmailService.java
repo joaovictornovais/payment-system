@@ -1,7 +1,7 @@
-package br.com.joao.payment.service;
+package br.com.joao.payment.services;
 
-import br.com.joao.payment.entity.Email;
-import br.com.joao.payment.enums.StatusEmail;
+import br.com.joao.payment.domain.email.Email;
+import br.com.joao.payment.domain.email.StatusEmail;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.mail.javamail.JavaMailSender;

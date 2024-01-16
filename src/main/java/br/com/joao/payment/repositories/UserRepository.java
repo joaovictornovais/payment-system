@@ -1,8 +1,9 @@
-package br.com.joao.payment.repository;
+package br.com.joao.payment.repositories;
 
-import br.com.joao.payment.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import br.com.joao.payment.domain.user.User;
 
 
 public interface UserRepository extends JpaRepository<User, String> {

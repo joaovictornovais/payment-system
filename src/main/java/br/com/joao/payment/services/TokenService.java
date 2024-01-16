@@ -1,4 +1,4 @@
-package br.com.joao.payment.service;
+package br.com.joao.payment.services;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -12,7 +12,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 
-import br.com.joao.payment.entity.User;
+import br.com.joao.payment.domain.user.User;
 
 @Service
 public class TokenService {

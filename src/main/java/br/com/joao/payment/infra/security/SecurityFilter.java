@@ -1,4 +1,4 @@
-package br.com.joao.payment.config;
+package br.com.joao.payment.infra.security;
 
 import java.io.IOException;
 
@@ -8,8 +8,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import br.com.joao.payment.repository.UserRepository;
-import br.com.joao.payment.service.TokenService;
+import br.com.joao.payment.repositories.UserRepository;
+import br.com.joao.payment.services.TokenService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
