@@ -24,5 +24,10 @@ public class UserController {
         if (userService.activeUser(id, verify)) return ResponseEntity.ok("User activated!");
         return ResponseEntity.badRequest().body("Wrong code or user already activated!");
     }
+    
+    @GetMapping
+    public ResponseEntity<String> get() {
+    	return ResponseEntity.ok("Olá!");
+    }
 
 }

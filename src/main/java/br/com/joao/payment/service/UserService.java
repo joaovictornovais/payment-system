@@ -1,5 +1,6 @@
 package br.com.joao.payment.service;
 
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +14,8 @@ import br.com.joao.payment.util.GenerateVerificationCode;
 public class UserService {
 
     private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
     private final EmailService emailService;
+    private final PasswordEncoder passwordEncoder;
 
     public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, EmailService emailService) {
         this.userRepository = userRepository;
@@ -62,5 +63,9 @@ public class UserService {
             return true;
         }
         return false;
+    }
+    
+    public UserDetails findByEmail(String email) {
+    	return userRepository.findByEmail(email);
     }
 }
